@@ -56,11 +56,16 @@ class MyPoint {
         return dist;
     }
 
+    public String toString() {
+        // overriding the toString() method
+        return (" The value of x = " + x + "and  y=" + y);
+    }
 }
 
 public class TestMyPoint {
     public static void main(String args[]) {
         MyPoint mypoint = new MyPoint(4, 5);
+        System.out.println(mypoint);
         int[] point = mypoint.getxy();
         System.out.println("Point coordinates are " + point[0] + ", " + point[1]);
         System.out.print("Distance between Point 7,6 and " + point[0] + ", " + point[1] + " is ");
@@ -71,6 +76,7 @@ public class TestMyPoint {
         distance = mypoint.distance();
         System.out.println(distance);
         MyPoint mypoint1 = new MyPoint(8, 9);
+        System.out.println(mypoint1);
         int[] point1 = mypoint1.getxy();
         System.out.println("Point coordinates are " + point1[0] + ", " + point1[1]);
         System.out.print(

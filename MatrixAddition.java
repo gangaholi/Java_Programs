@@ -3,7 +3,7 @@ public class MatrixAddition {
     public static void main(String[] args) {
         // Check if the number of command line arguments is correct
         if (args.length != 1) {
-            System.out.println("Usage: java MatrixAddition <order N>");
+            System.out.println(" No command line arguments="+args.length);
             return;
         }
 
@@ -17,8 +17,8 @@ public class MatrixAddition {
         }
 
         // Create two matrices of order N
-        int[][] matrixA = generateRandomMatrix(N);
-        int[][] matrixB = generateRandomMatrix(N);
+        int[][] matrixA = generateMatrix(N);
+        int[][] matrixB = generateMatrix(N);
 
         // Print the matrices
         System.out.println("Matrix A:");
@@ -35,19 +35,19 @@ public class MatrixAddition {
         printMatrix(resultMatrix);
     }
 
-    // Function to generate a random matrix of order N
-    private static int[][] generateRandomMatrix(int N) {
+    // Function to generate a matrix of order N
+    static int[][] generateMatrix(int N) {
         int[][] matrix = new int[N][N];
         for (int i = 0; i < N; i++) {
             for (int j = 0; j < N; j++) {
-                matrix[i][j] = (int) (Math.random() * 10); // Random integer between 0 and 9
+                matrix[i][j] = i*3+j; 
             }
         }
         return matrix;
     }
 
     // Function to add two matrices
-    private static int[][] addMatrices(int[][] matrixA, int[][] matrixB) {
+    static int[][] addMatrices(int[][] matrixA, int[][] matrixB) {
         int N = matrixA.length;
         int[][] resultMatrix = new int[N][N];
         for (int i = 0; i < N; i++) {
@@ -59,7 +59,7 @@ public class MatrixAddition {
     }
 
     // Function to print a matrix
-    private static void printMatrix(int[][] matrix) {
+    static void printMatrix(int[][] matrix) {
         for (int[] row : matrix) {
             for (int value : row) {
                 System.out.print(value + " ");

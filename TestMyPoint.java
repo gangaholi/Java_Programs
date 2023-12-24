@@ -58,16 +58,17 @@ class MyPoint {
 
     public String toString() {
         // overriding the toString() method
-        return (" The value of x = " + x + "and  y=" + y);
+        return (" The coordinate value of x = " + x + "  and  y=" + y);
     }
 }
 
-public class TestMyPoint {
-    public static void main(String args[]) {
-        MyPoint mypoint = new MyPoint(4, 5);
+public class TestMyPoint 
+{
+    public static void main(String args[]) 
+    {      
+        MyPoint mypoint = new MyPoint(4, 5); 
         System.out.println(mypoint);
         int[] point = mypoint.getxy();
-        System.out.println("Point coordinates are " + point[0] + ", " + point[1]);
         System.out.print("Distance between Point 7,6 and " + point[0] + ", " + point[1] + " is ");
         double distance = mypoint.distance(7, 6);
         System.out.println(distance);
@@ -75,19 +76,19 @@ public class TestMyPoint {
         System.out.print("Distance between Origin(0,0) and " + point[0] + ", " + point[1] + " is ");
         distance = mypoint.distance();
         System.out.println(distance);
+       
         MyPoint mypoint1 = new MyPoint(8, 9);
         System.out.println(mypoint1);
         int[] point1 = mypoint1.getxy();
-        System.out.println("Point coordinates are " + point1[0] + ", " + point1[1]);
-        System.out.print(
-                "Distance between point " + point[0] + ", " + point[1] + "  and " + point1[0] + ", " + point1[1]
-                        + " is ");
+        System.out.println(mypoint1);
+        System.out.println("Distance between point " + point[0] + ", " + point[1]);
+        System.out.print("  and " + point1[0] + ", " + point1[1]+ " is ");
         distance = mypoint1.distance(mypoint);
-        System.out.println(distance);
+        System.out.println(distance);  
 
-        System.out.print("Distance between Origin(0,0) and " + point1[0] + ", " + point1[1] + " is ");
+        System.out.print("Distance between Origin(0,0) and " + point1[0] + ", " + point1[1]);
+        System.out.print(" is ");
         distance = mypoint1.distance();
         System.out.println(distance);
 
     }
-}

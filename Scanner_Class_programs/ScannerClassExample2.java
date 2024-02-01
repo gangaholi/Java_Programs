@@ -1,7 +1,7 @@
 import java.util.*;  
 public class ScannerClassExample2 {    
       public static void main(String args[]){                       
-          String str = "Hello/This is JavaTpoint/My name is Abhishek.";  
+          String str = "Hello/This is ICB Dept/My name is Abhishek.";  
           //Create scanner with the specified String Object  
           Scanner scanner = new Scanner(str);  
           System.out.println("Boolean Result: "+scanner.hasNextBoolean());            

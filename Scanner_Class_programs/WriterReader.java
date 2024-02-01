@@ -6,10 +6,30 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
+
+// Class Person.java
+import java.io.Serializable;
+class Person implements Serializable
+{	private static final long serialVersionUID = 1L;
+	private String name;
+	private int age;
+	private String gender;
+	
+	Person(String name, int age, String gender) {
+		this.name = name;
+		this.age = age;
+		this.gender = gender;
+	}
+	@Override
+	public String toString() {
+		return "Name:" + name + "\nAge: " + age + "\nGender: " + gender;
+	}
+}
+
 public class WriterReader {
 	public static void main(String[] args) {
-		Person p1 = new Person("John", 30, "Male");
-		Person p2 = new Person("Rachel", 25, "Female");
+		Person p1 = new Person("Jai", 30, "Male");
+		Person p2 = new Person("Rai", 25, "Female");
 		try {  
            FileOutputStream f = new FileOutputStream(new File("myObjects.txt"));
 		     ObjectOutputStream o = new ObjectOutputStream(f);

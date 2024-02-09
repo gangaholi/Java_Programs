@@ -10,26 +10,35 @@ import java.io.ObjectOutputStream;
 // Class Person.java
 import java.io.Serializable;
 class Person implements Serializable
-{	private static final long serialVersionUID = 1L;
+{	//private static final long serialVersionUID = 1L;
 	private String name;
+   private String usn;
 	private int age;
 	private String gender;
 	
-	Person(String name, int age, String gender) {
-		this.name = name;
+	Person(String usn,String name, int age, String gender) {
+		this.usn = usn;
+      this.name = name;
 		this.age = age;
 		this.gender = gender;
-	}
-	@Override
+	} 
+   int getAge()
+   {
+      return age;
+   }
+   String getUSN()
+   {
+      return usn;
+   }
 	public String toString() {
-		return "Name:" + name + "\nAge: " + age + "\nGender: " + gender;
+		return "Usn: "+usn+"\t Name:" + name + "\t Age: " + age + "\t Gender: " + gender+"\n";
 	}
 }
 
 public class WriterReader {
 	public static void main(String[] args) {
-		Person p1 = new Person("Jai", 30, "Male");
-		Person p2 = new Person("Rai", 25, "Female");
+		Person p1 = new Person("1KS22IC002","Jai", 30, "Male");
+		Person p2 = new Person("1KS22IC042","Rai", 25, "Female");
 		try {  
            FileOutputStream f = new FileOutputStream(new File("myObjects.txt"));
 		     ObjectOutputStream o = new ObjectOutputStream(f);
@@ -43,17 +52,23 @@ public class WriterReader {
 			  // Read objects
 			  Person pr1 = (Person) oi.readObject();
 			  Person pr2 = (Person) oi.readObject();
-			  System.out.println(pr1.toString());
-			  System.out.println(pr2.toString());
-			  oi.close();
+			  System.out.println(pr1);
+			  System.out.println(pr2);
+           System.out.println("USN is  ="+pr2.getUSN());
+           System.out.println("Age is  ="+pr2.getAge());
+			  String usn="1KS22ic002";
+           if(usn.equalsIgnoreCase(pr1.getUSN()))
+             System.out.println(" USN found ");
+            else
+            System.out.println(" USN not found ");
+           oi.close();
 			  fi.close();
 		  } catch (FileNotFoundException e) {
 			  System.out.println("File not found");
 		  } catch (IOException e) {
 			  System.out.println("Error initializing stream");
 		  } catch (ClassNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			 e.printStackTrace();
 	    }
    }
 }

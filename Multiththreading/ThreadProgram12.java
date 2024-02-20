@@ -1,59 +1,44 @@
-class MyBaseThread extends Thread {
-    // Base class constructor
-    public MyBaseThread(String name) {
-        super(name);
-    }
-@Override
-    public void run() 
-    {   for (int i = 1; i <= 5; i++) 
-       {  System.out.println(Thread.currentThread().getName() + ": Count " + i);
-            try {
-                Thread.sleep(300);
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
-        }
-    }
+// Create a second thread by extending Thread
+class MyThread extends Thread 
+{  int n;
+   MyThread(String name, int n) 
+   {  super(name);
+      this.n = n;
+      System.out.println("Child thread:    " + this);
+      start(); // Start the thread
+   }
+   // This is the entry point for the second thread.
+   public void run() 
+   {  int fact=1;
+      String name=getName();
+      try 
+      {  for(int i = n; i > 0; i--) 
+         {    fact=fact*i;
+              System.out.println(name+" Child Thread:  " + i);
+              Thread.sleep(500);
+         }
+      }
+      catch (InterruptedException e) 
+      {   System.out.println("Child interrupted.");
+      }
+      System.out.println("Exiting "+ name +" child thread. Fact of "+n+ "="+fact);
+   }
 }
-
-class MyThread extends MyBaseThread 
-{   public MyThread(String name) 
-    {    super(name);
-        start();
-    }
-
-   @Override
-    public void run() 
+class ThreadProgram12 
+{   public static void main(String args[]) 
     {
-        for (int i = 1; i <= 5; i++) 
-        {  System.out.println(Thread.currentThread().getName() + ": Child Count " + i);
-            try {
-         	   Thread.sleep(500);
-                } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
-        }
-    }
+       MyThread t1 = new MyThread("1", 5); 
+       MyThread t2 = new MyThread("2", 6);
+       MyThread t3 = new MyThread("3", 7);
+       try 
+       {  for(int i = 5; i > 0; i--) 
+         {  System.out.println("Main Thread: " + i);
+            Thread.sleep(1000);
+         }
+      }
+      catch (InterruptedException e) 
+      {    System.out.println("Main thread interrupted.");
+      }
+      System.out.println("Main thread exiting.");
+   }
 }
-
-public class ThreadProgram12 
-{   public static void main(String[] args) 
-    {  MyThread myThread = new MyThread("Child Thread");
-	for (int i = 1; i <= 5; i++) 
-        {  System.out.println(Thread.currentThread().getName() + ": Main Count " + i);
-            try {
-                 Thread.sleep(200);
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
-        }
-
-        try {
-            myThread.join();
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-        System.out.println("Main thread exiting.");
-    }
-}
-

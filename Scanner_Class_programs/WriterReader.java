@@ -22,6 +22,14 @@ class Person implements Serializable
 		this.age = age;
 		this.gender = gender;
 	} 
+   void updateName(String name)
+   {
+     this.name=name;
+   }
+   String getName()
+   {
+      return name;
+   }
    int getAge()
    {
       return age;
@@ -56,7 +64,11 @@ public class WriterReader {
 			  System.out.println(pr2);
            System.out.println("USN is  ="+pr2.getUSN());
            System.out.println("Age is  ="+pr2.getAge());
-			  String usn="1KS22ic002";
+           System.out.println("Name is  ="+pr2.getName());
+           pr2.updateName("Ganga");
+           System.out.println("Updated Name  ="+pr2.getName());
+           
+           String usn="1KS22ic002";
            if(usn.equalsIgnoreCase(pr1.getUSN()))
              System.out.println(" USN found ");
             else

@@ -7,7 +7,7 @@ class CurrentThreadDemo
       System.out.println("Current thread: " + t);
       String name=t.getName();
       System.out.println("Current Thread name : " + name);
-  
+      System.out.println("Current Thread Sate : " +t.getState());
       // change the name of the thread
       t.setName("My_Thread");
       System.out.println("After name change: " + t);
@@ -20,5 +20,6 @@ class CurrentThreadDemo
        } catch (InterruptedException e) {
             System.out.println("Main thread interrupted");
          }
+         System.out.println("Current Thread Sate : " +t.getState());
    }
 }

@@ -67,7 +67,6 @@ public class WriterReader {
            System.out.println("Name is  ="+pr2.getName());
            pr2.updateName("Ganga");
            System.out.println("Updated Name  ="+pr2.getName());
-           
            String usn="1KS22ic002";
            if(usn.equalsIgnoreCase(pr1.getUSN()))
              System.out.println(" USN found ");

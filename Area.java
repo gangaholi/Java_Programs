@@ -11,6 +11,7 @@ class Area {
       }
       else
          System.out.println("Radius not greater than "+radius);
-      
+      boolean  a[]= new boolean[3];
+      System.out.println(a[1]);
 	}
 }

@@ -2,7 +2,6 @@
 class Area {
 	public static void main(String args[]) {
 		double pi,radius, area;
-		
       radius = 11;// radius of circle
 		pi = 3.1416; // pi, approximately
 		if(radius >0)

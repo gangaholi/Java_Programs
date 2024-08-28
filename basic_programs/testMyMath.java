@@ -4,11 +4,11 @@ class MyMath
    static int square(int number)  // instance method
    {  return number*number;
    } 
-  static void display()
-  {  n=n+10;
+   static void display()
+   {  n=n+10;
      System.out.println(" n: "+n);
   }
-   
+    
 }
 
 

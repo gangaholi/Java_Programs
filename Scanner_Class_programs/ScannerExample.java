@@ -9,6 +9,12 @@ public static void main(String args[]){
           System.out.print("Enter your College name: ");  
           String cname = in.next();  
           System.out.println("Name is: " + cname); 
+          System.out.println("Integer Data=");
+          int x = in.nextInt();
+          System.out.println("x="+x);
+          System.out.println("Double Data=");
+          double data=in.nextDouble();
+          System.out.println("double="+data);
           in.close();             
           }  
 }  

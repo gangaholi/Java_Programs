@@ -1,16 +1,13 @@
 import java.util.Scanner;
-public class program1
+public class Matrix_Multiplcation
 {    public static void main(String[] args) 
      {  
         Scanner input = new Scanner(System.in);
-        
         int length=args.length;
-
         if(length==0)
-        {  System.out.println(" No argumengt is given ");
+        {  System.out.println(" No. argument is  "+length);
            return; 
         }   
-        
         int n = Integer.parseInt(args[0]);     
         if(n<1)
         {  System.out.println(" Please enter matrix size > 0  ");
@@ -49,12 +46,13 @@ public class program1
             }
             System.out.println(" ");
          }
-         
-         System.out.println("Addition of matrices is Matrix C ");     
+
+         System.out.println("Multiplication of A & B matrices is Matrix C ");     
          for(i=0;i<n;i++)
          {
             for(j=0;j<n;j++)
-            {    matrixC[i][j]=matrixA[i][j] + matrixB[i][j];
+            {   for(int k=0;k<n;k++)
+                   matrixC[i][j]=matrixC[i][j]+matrixA[i][k]* matrixB[k][j];
             }
          }
          

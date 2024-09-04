@@ -12,19 +12,18 @@ public class program1_1
         
         Scanner input = new Scanner(System.in);
         
-        System.out.println(" random output="+Math.random());
-        System.out.println("enter A matrix of 2x2=");
+        System.out.println("Enter square matrix A of size ="+n);
         for(i=0;i<n;i++)
             for(j=0;j<n;j++)
-               matrixA[i][j]=(int)(Math.random()*100);
-               //matrixA[i][j]=input.nextInt();
+               //matrixA[i][j]=(int)(Math.random()*100);
+               matrixA[i][j]=input.nextInt();
         
-        System.out.println("enter B matrix of 2x2=");
+        System.out.println("Enter square matrix B of size ="+n);
               
         for(i=0;i<n;i++)
             for(j=0;j<n;j++)
-               matrixB[i][j]=(int)(Math.random()*100);
-               //matrixB[i][j]=input.nextInt();
+               //matrixB[i][j]=(int)(Math.random()*100);
+               matrixB[i][j]=input.nextInt();
         
          System.out.println("Matrix A is ");      
 

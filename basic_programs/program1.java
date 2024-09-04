@@ -21,7 +21,7 @@ public class program1
         int matrixB[][]= new int[n][n];
         int matrixC[][]= new int[n][n];
         int i, j;
-
+        System.out.println("Size on the matrix is ="+n);
         System.out.println("Enter Matrix A elements of size = "+n);
         for(i=0;i<n;i++)
             for(j=0;j<n;j++)

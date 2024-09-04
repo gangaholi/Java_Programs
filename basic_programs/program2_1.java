@@ -45,17 +45,30 @@ class Stack {
         }
     }
 }
-public class program2
+public class program2_1
 {    public static void main(String[] args) 
-     {    
-        Stack stack = new Stack(10);
-        for(int i=1;i<=10;i++)  stack.push(i*2);
-        stack.display();
-        System.out.println("poping all the elements");
-        for(int i=1;i<=10;i++) 
-        {  int ele = stack.pop();
-           System.out.println(ele +" \t");
+     {  
+        Scanner input = new Scanner(System.in);
+        
+        System.out.println("Enter the soze of the stacck n =");
+        int n= input.nextInt();
+        
+        Stack stack = new Stack(n);
+        System.out.println("Enter Stack elements n="+n);
+        for(int i=1;i<=n;i++)  
+        {  
+           int item=input.nextInt();
+           stack.push(item);
         }
+        System.out.println("Displaying stack elemnts");
+        stack.display();
+        
+        System.out.println("Poping all the elements");
+        for(int i=1;i<=n;i++) 
+        {  int ele = stack.pop();
+           System.out.println("Poped element is "+ele);
+        }
+        System.out.println("Displaying stack elemnts");
         stack.display();
     }
 }

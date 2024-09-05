@@ -1,3 +1,4 @@
+import java.util.Scanner;
 class Employee
 { int id;
   String name;
@@ -23,16 +24,30 @@ class Employee
 public class program3
 {
    public static void main(String args[])
-   {
-      Employee emp = new Employee(23,"Raju", 200000);
-      System.out.println("Before salary raise");
-      emp.display();
+   {   
+      Scanner in = new Scanner(System.in);
+      System.out.println("Enter Employee Deatils ");
+      System.out.print("Employee Id ="); 
+      int id= in.nextInt();
       
-      emp.raiseSalary(35);  
-      System.out.println("After salary raise");
-      emp.display();
+      System.out.print("Employee Name ="); 
+      String name = in.next();
+      System.out.print("Employee Salary ="); 
+      double salary= in.nextDouble();
       
+      Employee emp = new Employee(id, name, salary);
+      System.out.println("\nEmployee details before salary raise");
+      emp.display();      
+      
+      System.out.println("Enter percentage of Increment (0-100) ="); 
+      double percentage = in.nextDouble();
+      emp.raiseSalary(percentage);  
+      System.out.println("\nEmployee details after salary raise");
+      emp.display();  
+      Employee emp1 = new Employee(5, "ABC",100000);
+      emp1.display();   
+      emp1.raiseSalary(30);   
+      emp1.display();     
+          
    }
-
-
 }

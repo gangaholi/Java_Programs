@@ -13,7 +13,8 @@ class Stack {
     void push(int value) 
     {
         if (top == maxSize - 1) 
-        {   System.out.println("Stack is full. Cannot push " + value);
+        {   System.out.println("Stack is full. Cannot push " + value); 
+            return;
         } 
         else 
         {   s[++top] = value;
@@ -39,7 +40,7 @@ class Stack {
         {   System.out.println("Stack elements: "+top);
             for (int i = 0; i <= top; i++) 
             {
-                System.out.print(s[i] + " ");
+                System.out.println(s[i] + " ");
             }
             System.out.println();
         }
@@ -49,7 +50,8 @@ public class program2
 {    public static void main(String[] args) 
      {    
         Stack stack = new Stack(10);
-        for(int i=1;i<=10;i++)  stack.push(i*2);
+        for(int i=1;i<=10;i++)  
+            stack.push(i*2);
         stack.display();
         System.out.println("poping all the elements");
         for(int i=1;i<=10;i++) 

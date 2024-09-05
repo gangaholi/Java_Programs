@@ -18,21 +18,23 @@ class MyPoint
 
     double distance(int p, int q) 
     {   double dist;
-        dist = Math.sqrt((double) ((x - p) * (x - p) + (y - q) * (y - q)));
+        double xdiff=Math.pow((x - p),2);
+        double ydiff=Math.pow((y - q),2);
+        dist = Math.sqrt(xdiff+ ydiff);
         return dist;
     }
 
     double distance(MyPoint point) 
     {   double dist;
-        double temp1 = (x - point.x) * (x - point.x);
-	     double temp2 = (y - point.y) * (y - point.y);
-	     dist =   Math.sqrt(temp1 + temp2);
+        double xdiff = Math.pow((x - point.x),2);
+	     double ydiff = Math.pow((y - point.y),2);
+	     dist = Math.sqrt((xdiff+ ydiff));
         return dist;
     }
 
     double distance() 
     {  double dist;
-       dist = Math.sqrt((double) ((x - 0) * (x - 0) + (y - 0) * (y - 0)));
+       dist = Math.sqrt(x * x + y * y);
        return dist;
     }
 
@@ -47,12 +49,12 @@ public class Program4
     {      
         MyPoint mypoint = new MyPoint(4, 5); 
         System.out.println(mypoint);
-        int[] point = mypoint.getxy();
-        System.out.print("Distance from Point 7,6 to " + point[0] + ", " + point[1] + " is ");
+        int[] point = mypoint.getxy();  
+        System.out.print("\nDistance from Point 7,6 to " + point[0] + ", " + point[1] + " is ");
         double distance = mypoint.distance(7, 6);
         System.out.println(distance);
-
-        System.out.print("Distance from Origin(0,0) to " + point[0] + ", " + point[1] + " is ");
+        
+        System.out.print("\nDistance from Origin(0,0) to " + point[0] + ", " + point[1] + " is ");
         distance = mypoint.distance();
         System.out.println(distance);
        
@@ -60,12 +62,13 @@ public class Program4
         System.out.println(mypoint1);
         int[] point1 = mypoint1.getxy();
         System.out.println(mypoint1);
-        System.out.println("Distance from point " + point[0] + ", " + point[1]);
-        System.out.print("  to " + point1[0] + ", " + point1[1]+ " is ");
+ 
+        System.out.print("\nDistance from point " + point[0] + ", " + point[1]);
+        System.out.println("  to " + point1[0] + ", " + point1[1]+ " is ");
         distance = mypoint1.distance(mypoint);
         System.out.println(distance);  
 
-        System.out.print("Distance from Origin(0,0) to " + point1[0] + ", " + point1[1]);
+        System.out.print("\nDistance from Origin(0,0) to " + point1[0] + ", " + point1[1]);
         System.out.print(" is ");
         distance = mypoint1.distance();
         System.out.println(distance);

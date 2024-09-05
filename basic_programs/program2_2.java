@@ -33,10 +33,11 @@ class Stack {
     void display() 
     {
         if (top == - 1) 
-        { System.out.println("Stack is empty.");
+        {  
+         System.out.println("Stack is empty.");
         }
         else 
-        {   System.out.println("Stack elements: "+top);
+        {   
             for (int i = 0; i <= top; i++) 
             {
                 System.out.print(s[i] + " ");
@@ -55,14 +56,15 @@ public class program2_2
         
         Stack stack = new Stack(n);
         System.out.println(" Stack size is ="+n);
-        System.out.println("Menu driven Stack operations");
-        System.out.println("Push");
-        System.out.println("Pop");
-        System.out.println("Display");
-        System.out.println("Exit \n ");
         
         while(true)
         {      
+          System.out.println("Menu driven Stack operations");
+          System.out.println("1. Push");
+          System.out.println("2. Pop");
+          System.out.println("3. Display");
+          System.out.println("4. Exit \n ");
+        
           System.out.println("Enter Choice=");
           int choice=input.nextInt();
           switch(choice)

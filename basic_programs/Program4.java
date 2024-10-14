@@ -38,8 +38,8 @@ class MyPoint
        return dist;
     }
 
-    public String toString() {
-           return ("The coordinate value of x = " + x + "  and  y=" + y);
+     public String toString() {
+            return ("The coordinate value of x = " + x + "  and  y=" + y);
     }
 }
 
@@ -49,6 +49,7 @@ public class Program4
     {      
         MyPoint mypoint = new MyPoint(4, 5); 
         System.out.println(mypoint);
+        
         int[] point = mypoint.getxy();  
         System.out.print("\nDistance from Point 7,6 to " + point[0] + ", " + point[1] + " is ");
         double distance = mypoint.distance(7, 6);
@@ -67,11 +68,11 @@ public class Program4
         System.out.println("  to " + point1[0] + ", " + point1[1]+ " is ");
         distance = mypoint1.distance(mypoint);
         System.out.println(distance);  
-
-        System.out.print("\nDistance from Origin(0,0) to " + point1[0] + ", " + point1[1]);
+   
+       System.out.print("\nDistance from Origin(0,0) to " + point1[0] + ", " + point1[1]);
         System.out.print(" is ");
         distance = mypoint1.distance();
         System.out.println(distance);
-
+   
     }
 }

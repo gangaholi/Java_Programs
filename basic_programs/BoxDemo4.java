@@ -9,7 +9,6 @@ return width * height * depth;
 }
 void display()
 {
-
    System.out.println(width+"  "+ height+"  "+  depth);
 }
 }

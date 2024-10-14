@@ -1,70 +1,60 @@
 // Now, volume() returns the volume of a box.
-class Box5 {
-double width;
-double height;
-double depth;
-Box5()
-{
-    width =1;
-    height =1;
-    depth = 1;
+class Rectangle {
+double length;
+double breadth;
+Rectangle()
+{   length=1;
+    breadth=1;
     System.out.println(" Default constructor  ....\n");
 }
-Box5(double w, double h, double d)
-{
-    width =w;
-    height =h;
-    depth = d;
-    System.out.println(" 3 parametrized constructor  ....\n");
-}
 
-Box5(double x)
+Rectangle(double x)
 {
-    width =height =depth = x;
+    length=breadth = x;
     System.out.println(" 1 parametrized constructor  ....\n");
 
 }
 
-Box5(double x, double y)
+Rectangle(double x, double y)
 {
-    width =height= x;
-    depth = y;
+    length=x;
+    breadth=y;
     System.out.println(" 2 parametrized constructor  ....\n");
 
 }
 
-Box5(Box5 satvik)
-{   width =satvik.width;
-    height =satvik.height;
-    depth = satvik.depth;
+Rectangle(Rectangle rec)
+{   length=rec.length;
+    breadth=rec.breadth;
     System.out.println(" Object  parametrized constructor  ....\n");
 
 }
 
 // compute and return volume
-double volume() {
-return width * height * depth;
+double area() {
+return length* breadth;
 }
 
 void display()
 {
-   System.out.println("Width:"+width+" height: "+ height+" Height: "+  depth);
+   System.out.println("Length="+length+" Breadth: "+ breadth);
 }
 }
 
-public class BoxDemo5 {
+public class RectangleDemo {
    public static void main(String args[]) {
-      Box5 mybox1 = new Box5();
-      Box5 mybox2 = new Box5(3,4,6);
-      Box5 mybox3 = new Box5(6);
-      Box5 mybox4 = new Box5(6,5);
-      double vol;
+     Rectangle rect1 = new Rectangle();
+     Rectangle rect2 = new Rectangle(2);
+     Rectangle rect3 = new Rectangle(3,4);
+     Rectangle rect4 = new Rectangle(rect1);
+     Rectangle rect5 = new Rectangle(10);      
+     double area;
       // get volume of first b,ox
-      mybox1.display();
-      vol = mybox1.volume();
-      System.out.println(" mybox1 Volume is " + vol);
+      rect1.display();
+      area = rect1.area();
+      System.out.println(" Rect 1 area is " + area);
       // get volume of second box
-      mybox2.display();
+     /* mybox2.display();
       vol = mybox2.volume();
       System.out.println("mybox2  Volume is " + vol);
       mybox3.display();
@@ -78,6 +68,6 @@ public class BoxDemo5 {
       ss.display();
       vol = ss.volume();
       System.out.println(" ss Volume is " + vol);
-            
+       */     
    }
 }

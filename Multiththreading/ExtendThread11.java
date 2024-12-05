@@ -7,7 +7,6 @@ class MyThread1 extends Thread
      System.out.println("Child thread:    " + this);
      start(); // Start the thread
     }
-    // This is the entry point for the second thread.
     public void run() 
     {
          int f=1;
@@ -27,22 +26,22 @@ class MyThread1 extends Thread
    }
 }
 
-class ThreadProgram12 {
+class ExtendThread11 {
    public static void main(String args[]) 
    {
       MyThread1 t =new MyThread1("1"); // create a new thread
-                 // new NewThread("2");
-                 // new NewThread("3");
-                  //new NewThread("4");
+                   new MyThread1("2");
+                   new MyThread1("3");
+                   new MyThread1("4");
       try {
             for(int i = 5; i > 0; i--) 
             {
-               System.out.println("Main Thread: " + i+" Thread State="+ new Thread().getState());
+               System.out.println("Main Thread: " + i);
                Thread.sleep(1000);
             }  
       } catch (InterruptedException e) {
-         System.out.println("Main thread interrupted.");
-   }
-   System.out.println("Main thread exiting.");
-}
+          System.out.println("Main thread interrupted.");
+    }
+    System.out.println("Main thread exiting.");
+  }
 }

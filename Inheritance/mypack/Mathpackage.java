@@ -1,7 +1,5 @@
-//save by A.java  
-package pack1;
-//package mypack.pack1;
-public class MyMath{    
+package mypack;
+public class MathPackage{    
   public static int square(int n)
   {
      return n*n;

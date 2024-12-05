@@ -1,13 +1,30 @@
 // An incorrect implementation of a producer and consumer.
 class Q {
    int n;
+   boolean valueSet = false;
    synchronized int get() {
-      System.out.println("Got: " + n);
-      return n;
+   while(!valueSet)
+   try {
+      wait();
+      } catch(InterruptedException e) {
+      System.out.println("InterruptedException caught");
    }
+   System.out.println("Got: " + n);
+   valueSet = false;
+   notify();
+   return n;
+ }
    synchronized void put(int n) {
+      while(valueSet)
+      try {
+         wait();
+         } catch(InterruptedException e) {
+            System.out.println("InterruptedException caught");
+      }
       this.n = n;
+      valueSet = true;
       System.out.println("Put: " + n);
+      notify();
    }
 }
 class Producer implements Runnable {
@@ -36,7 +53,7 @@ class Consumer implements Runnable {
       }
    }
 }
-public class PC {
+public class PC1 {
    public static void main(String args[]) {
       Q q = new Q();
       new Producer(q);

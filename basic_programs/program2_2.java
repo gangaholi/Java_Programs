@@ -51,7 +51,7 @@ public class program2_2
      {  
         Scanner input = new Scanner(System.in);
         
-        System.out.println("Enter the soze of the stacck n =");
+        System.out.println("Enter the size of the stacck n =");
         int n= input.nextInt();
         
         Stack stack = new Stack(n);

@@ -4,7 +4,7 @@ public class Balance
 {
    String name;
    double bal;
-   public Balance(String n, double b) 
+   public void Balance(String n, double b) 
    {  name = n;
       bal = b;
    }

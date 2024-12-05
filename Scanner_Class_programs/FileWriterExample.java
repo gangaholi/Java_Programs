@@ -1,8 +1,7 @@
 import java.io.FileWriter;  
 import java.util.Scanner;
 public class FileWriterExample
-{  
-    public static void main(String args[])
+{   public static void main(String args[])
     {    Scanner in = new Scanner(System.in);
          try{    
            FileWriter fw=new FileWriter("ICBDept.txt"); 
@@ -18,3 +17,4 @@ public class FileWriterExample
           System.out.println("Success...");    
      }    
 }  
+

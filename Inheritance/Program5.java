@@ -12,12 +12,9 @@
 
 	// Circle class (subclass)
 	class Circle extends Shape {
-	    @Override
 	    public void draw() {
 	        System.out.println("Drawing a circle");
 	    }
-
-	    @Override
 	    public void erase() {
 	        System.out.println("Erasing a circle");
 	    }
@@ -25,25 +22,20 @@
 
 	// Triangle class (subclass)
 	class Triangle extends Shape {
-	    @Override
 	    public void draw() {
 	        System.out.println("Drawing a triangle");
 	    }
-
-	    @Override
 	    public void erase() {
 	        System.out.println("Erasing a triangle");
 	    }
 	}
 
 	// Square class (subclass)
-	class Square extends Shape {
-	    @Override
-	    public void draw() {
+	class Square extends Shape 
+   {    public void draw() 
+        {
 	        System.out.println("Drawing a square");
-	    }
-
-	    @Override
+	     }
 	    public void erase() {
 	        System.out.println("Erasing a square");
 	    }

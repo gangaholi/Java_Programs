@@ -18,11 +18,11 @@ class Rectangle implements Resizable
    {    System.out.print("Rectangle Dimensions: Width = " + width);
          System.out.println(", Height = " + height);
    }
-   @Override
+   
    public void resizeWidth(int width) 
    {    this.width = width;
    }
-   @Override
+   
    public void resizeHeight(int height) 
    {   this.height = height;
    }
@@ -37,6 +37,7 @@ public class Program7
       // Resizing the rectangle
       rectangle.resizeWidth(8);
       rectangle.resizeHeight(12);
+
       // Displaying updated dimensions after resizing
       System.out.println("\nAfter resizing:");
       rectangle.displayDimensions();

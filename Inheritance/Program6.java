@@ -13,11 +13,9 @@ class Circle1 extends Shape1
    {
       this.radius = radius;   
    }
-   @Override
    double calculateArea() {
       return Math.PI * radius * radius;
    }
-   @Override
   double calculatePerimeter() {
       return 2 * Math.PI * radius;
    }
@@ -32,8 +30,7 @@ class Triangle1 extends Shape1 {
       this.side2 = side2;
       this.side3 = side3;
    }
-   @Override
-   double calculateArea() {
+    double calculateArea() {
       // Heron's formula to calculate area of a triangle
       double s = (side1 + side2 + side3) / 2;
       return Math.sqrt(s * (s - side1) * (s - side2) * (s - side3));
